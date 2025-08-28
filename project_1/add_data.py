@@ -2,23 +2,22 @@ import sqlite3
 
 conn = sqlite3.connect("data_123.db")
 
-conn.execute("""
-                CREATE TABLE IF NOT EXISTS orders (
+conn.execute("""CREATE TABLE IF NOT EXISTS orders (
                 order_id INTEGER PRIMARY KEY,
                 customer_name TEXT NOT NULL,
-                order_date DATE NOT NULL)""")
-conn.execute("""
-                CREATE TABLE IF NOT EXISTS order_status_log (
+                order_date DATE NOT NULL)"""
+             )
+conn.execute("""CREATE TABLE IF NOT EXISTS order_status_log (
                 log_id INTEGER PRIMARY KEY,
                 order_id INTEGER NOT NULL,
                 status TEXT NOT NULL,
                 created_at DATETIME NOT NULL,
-                FOREIGN KEY (order_id) REFERENCES orders(order_id)""")
+                FOREIGN KEY (order_id) REFERENCES orders(order_id))""")
 
 # Вставка тестовых заказов
 conn.execute("""
                 INSERT INTO orders (order_id, customer_name, order_date) VALUES 
-                (121, 'Иван Петров', '2024-03-01'))
+                (121, 'Иван Петров', '2024-03-01'),
                 (122, 'Мария Сидорова', '2024-03-01'),
                 (123, 'Алексей Иванов', '2024-03-01'),
                 (124, 'Ольга Ветрова', '2024-03-02'),
