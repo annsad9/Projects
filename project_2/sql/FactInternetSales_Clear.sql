@@ -1,4 +1,4 @@
--- Подготовленные данные FACT_InternetSales
+-- FactInternetSales_Clear --
 SELECT 
   [ProductKey], 
   [OrderDateKey], 
@@ -28,6 +28,7 @@ SELECT
 FROM 
   [AdventureWorksDW2022].[dbo].[FactInternetSales]
 WHERE 
-  LEFT (OrderDateKey, 4) >= YEAR(GETDATE()) -2 -- Всегда смотрим последнии два года
+  LEFT (OrderDateKey, 4) >= YEAR(GETDATE()) -2 -- Г‚Г±ГҐГЈГ¤Г  Г±Г¬Г®ГІГ°ГЁГ¬ ГЇГ®Г±Г«ГҐГ¤Г­ГЁГЁ Г¤ГўГ  ГЈГ®Г¤Г 
 ORDER BY
   OrderDateKey ASC
+
