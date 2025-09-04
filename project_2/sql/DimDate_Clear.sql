@@ -21,6 +21,7 @@ SELECT
     --,[FiscalYear]
     --,[FiscalSemester]
   FROM [AdventureWorksDW2022].[dbo].[DimDate]
-  WHERE CalendarYear>=YEAR(GETDATE())-2
+  WHERE CalendarYear>=YEAR(GETDATE())-2 -- always look at the last two years
   
+
 
