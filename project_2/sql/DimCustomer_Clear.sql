@@ -1,4 +1,4 @@
--- Подготовленные данные DimCustomer
+-- DimCustomer_Clear --
 SELECT 
   c.[CustomerKey],
   --[GeographyKey],
@@ -12,7 +12,7 @@ SELECT
   --[BirthDate],
   --[MaritalStatus],
   --[Suffix],
-  CASE c.[Gender] WHEN 'M' THEN 'Male' WHEN 'f' THEN 'Female' END, 
+  CASE c.[Gender] WHEN 'M' THEN 'Male' WHEN 'f' THEN 'Female' END AS Gender, 
   --[EmailAddress],
   --[YearlyIncome],
   --[TotalChildren],
@@ -36,3 +36,4 @@ FROM
   LEFT JOIN [AdventureWorksDW2022].[dbo].[DimGeography] AS g ON g.GeographyKey = c.GeographyKey 
 ORDER BY 
   [CustomerKey] ASC
+
