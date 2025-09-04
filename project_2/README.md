@@ -1,6 +1,6 @@
 # Project 2
 Поскольку БД на английском языке, промежуточные таблицы и итоговый дашборд также выполним на языке исходных данных
-Результат в форматее .pdf можно посмотреть [здесь](https://github.com/annsad9/Projects/tree/main/project_2/result).
+Результат в формате .pdf можно посмотреть [здесь](https://github.com/annsad9/Projects/tree/main/project_2/result).
 
 ### 1. Устанавливаем Power BI и SSMS
 
