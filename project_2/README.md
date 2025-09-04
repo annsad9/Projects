@@ -3,31 +3,50 @@
 ## План выпонения проекта:
 1. Установить необходимые интсрументы
 2. Сформилирование цели и задачи
-3. [ Обновить базу данных используя готовый скрипт ](https://github.com/annsad9/Projects/edit/main/project_2/README.db#3-обновить-базу-данных-используя-готовый-скрипт)
-4. [ Преобразовать данные используя SQL запросы и SSMS ](https://github.com/annsad9/Projects/edit/main/project_2/README.db#4-преобразовать-данные-используя-sql-запросы-и-ssms)
-5. [ Загрузить полученные данные в Power Bi ](https://github.com/annsad9/Projects/edit/main/project_2/README.db#5-загрузить-полученные-данные-в-power-bi)
-6. [ Созданить дашборт на основе полученных данных](https://github.com/annsad9/Projects/edit/main/project_2/README.db#5-cозданить-дашборт-на-основе-полученных-данных)
-### 3. Обновить базу данных используя готовый скрипт 
+3. Обновить базу данных используя готовый скрипт 
+4. Преобразовать данные используя SQL запросы и SSMS
+5. Загрузить полученные данные в Power Bi
+6. Созданить дашборт на основе полученных данных
+### 1. Устанавливаем Power BI и SSMS
 
-[Скрипт для обнавления базы данных](https://github.com/techtalkcorner/SampleDemoFiles/blob/master/Database/AdventureWorks/Update_AdventureWorksDW_Data.sql)
+Power BI - скачиваем с офицального магазина приложений Microsoft Store
+SSMS - 
+
+### 2. Формилируем цель и задачи
+
+
+
+### 3. Скачиваем и обновляем БД
+
+Скачиваем хранилище данных AdventureWorks с офицального сайта [Microsoft](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=ssms), 
+для восстановления образца базы данных на нашем экземпляре SQL Server следуем инструкция на сайте.
+
+AdventureWorks — бесплатная тестовая база данных от Microsoft, разработанная для пользователей SQL Server. 
+База имитирует деятельность вымышленной компании Adventure Works Cycles и включает данные о продажах, производстве и человеческих ресурсах.
+
+Также обновим столбцы дат в базе данных используя данный [скрипт SQL](https://github.com/techtalkcorner/SampleDemoFiles/blob/master/Database/AdventureWorks/Update_AdventureWorksDW_Data.sql). Он использует текущий год в качестве последнего года для данных в БД.
+
+Также необходимо полготовить таблицу с бюджетом на год. FACT_Budget
 
 ### 4. Преобразовать данные используя SQL запросы и SSMS
+
 Для создания дашборда необходимо отчистить и преобразовать сырые данные 
 Из найденной БД подготовить несколько таблиц используя SQL запросы, на основе которых будет делать визуализацию. 
 Для удабства сразу в названии укажет относиться таблица к таблице фактов или измерений
 
-1. __DIM_DataCalendar__ -
+1. __[DIM_DataCalendar](https://github.com/annsad9/Projects/blob/main/project_2/sql/DimDate_Clear.sql)__ -
 преобразуем данные из DIMDate. Оставим только часть данных (за период 2019-2021 года) используя опреатор WHERE, оставльное в данном случае ислишне. Поскольку нужны понятные названия которые можно использовать при визуализации переименнуем названия столбцов, а также добавим сокращенную версию названия месяца
 
-2. __DIM_DateCustomer__ -
+2. __[DIM_DateCustomer](https://github.com/annsad9/Projects/blob/main/project_2/sql/DimCustomer_Clear.sql)__ -
 объеденим таблтцы с городами и клиентами и используем опреатор CASE для отчистки данных. Также отсортируем таблицу по ключу клиента
 
-3. __DIM_DateCustomer__ -
+3. __[DIM_DateProduct](https://github.com/annsad9/Projects/blob/main/project_2/sql/DimProduct_Clear.sql)__ -
 объединяем таблицы с продуктами, катеогриями продукта и подкотегориями продукта
 
-4. __FACT_InternetSales__ -
-Для преобразования данных использовались следующие операции:
+4. __[FACT_InternetSales](https://github.com/annsad9/Projects/blob/main/project_2/sql/FactInternetSales_Clear.sql)__ -
 
+
+**Для преобразования данных использовались следующие операции:**
 1. Оператор AS для переименовывания столбцов
 2. Объединение столбцов
 3. Комментирование в SQL запросах
@@ -38,8 +57,9 @@
 8. Функция IsNULL()
 9. GETDATE()
 
-Также необходимо полготовить таблицу с бюджетом на год. __(FACT_Budget)__
+
 ### 5. Загрузить полученные данные в Power Bi
-Импортируем все данные в Power BI (4 .csv и 1 .xlsx): необходимо проерить корректность определенных типов данных
+Импортируем [все данные](https://github.com/annsad9/Projects/tree/main/project_2/data) в Power BI (4 .csv и 1 .xlsx): необходимо проерить корректность определенных типов данных
 
 ### 6. Созданить дашборт на основе полученных данных
+
