@@ -1,4 +1,4 @@
--- Подготовленные данные DimDate
+-- DimDate_Clear --
 SELECT
      [DateKey]
     ,[FullDateAlternateKey] AS Date
@@ -23,3 +23,4 @@ SELECT
   FROM [AdventureWorksDW2022].[dbo].[DimDate]
   WHERE CalendarYear>=YEAR(GETDATE())-2
   
+
