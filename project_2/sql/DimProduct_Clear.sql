@@ -1,4 +1,4 @@
--- Подготовленные данные DimProduct
+-- DimProduct_Clear --
 SELECT 
   p.[ProductKey], 
   p.[ProductAlternateKey] AS ProductItemCode, 
@@ -39,8 +39,8 @@ SELECT
   --      ,[EndDate], 
   ISNULL (p.Status, 'Outdated') AS [Product Status] 
 FROM 
-  [AdventureWorksDW2022].[dbo].[DimProduct] as p
+  [AdventureWorksDW2022].[dbo].[DimProduct] AS p
   LEFT JOIN dbo.DimProductSubcategory AS ps ON ps.ProductSubcategoryKey = p.ProductSubcategoryKey 
   LEFT JOIN dbo.DimProductCategory AS pc ON ps.ProductCategoryKey = pc.ProductCategoryKey 
-order by 
+ORDER BY 
   p.ProductKey asc
