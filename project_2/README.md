@@ -1,7 +1,6 @@
 # Project 2
 Поскольку БД на английском языке, промежуточные таблицы и итоговый дашборд также выполним на языке исходных данных
-
-### 1. Устанавливаем Power BI и SSMS
+Результат можно посмотреть [здесь](https://github.com/annsad9/Projects/tree/main/project_2/result) или [в конце этого файла](https://github.com/annsad9/Projects/edit/main/project_2/README.md#результат-1-category---bikes-year---2024).### 1. Устанавливаем Power BI и SSMS
 
 Power BI — скачиваем с официального магазина приложений Microsoft Store.
 
