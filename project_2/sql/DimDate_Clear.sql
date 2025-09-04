@@ -1,27 +1,17 @@
 -- DimDate_Clear --
-SELECT
-     [DateKey]
-    ,[FullDateAlternateKey] AS Date
-    --,[DayNumberOfWeek]
-    ,[EnglishDayNameOfWeek] AS Day
-    --,[SpanishDayNameOfWeek]
-    --,[FrenchDayNameOfWeek]
-    --,[DayNumberOfMonth]
-    --,[DayNumberOfYear]
-    ,[WeekNumberOfYear] AS WeekNo
-    ,[EnglishMonthName] AS Month
-    ,LEFT([EnglishMonthName],3) AS MonthShort
-    --,[SpanishMonthName]
-    --,[FrenchMonthName]
-    ,[MonthNumberOfYear] AS MonthNo
-    ,[CalendarQuarter] AS Quarter
-    ,[CalendarYear] AS Year
-    --,[CalendarSemester]
-    --,[FiscalQuarter]
-    --,[FiscalYear]
-    --,[FiscalSemester]
-  FROM [AdventureWorksDW2022].[dbo].[DimDate]
-  WHERE CalendarYear>=YEAR(GETDATE())-2 -- always look at the last two years
+
+SELECT [DateKey] ,
+       [FullDateAlternateKey] AS Date ,
+       [EnglishDayNameOfWeek] AS DAY ,
+       [WeekNumberOfYear] AS WeekNo ,
+       [EnglishMonthName] AS MONTH ,
+       LEFT([EnglishMonthName], 3) AS MonthShort ,
+       [MonthNumberOfYear] AS MonthNo ,
+       [CalendarQuarter] AS QUARTER ,
+       [CalendarYear] AS YEAR
+FROM [AdventureWorksDW2022].[dbo].[DimDate]
+WHERE CalendarYear>=YEAR(GETDATE())-2 -- always look at the last two years
   
+
 
 
